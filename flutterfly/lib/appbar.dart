@@ -63,10 +63,19 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.notification_add),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 25),
+            child: IconButton(
+              onPressed: () {
+                print("Find more option.");
+              },
+              icon: Icon(Icons.more_vert),
+            ),
+          ),
         ],
         backgroundColor: Colors.redAccent,
         title: Padding(
-          padding: EdgeInsets.only(bottom: 25),
+          padding: EdgeInsets.only(bottom: 25, right: 50),
           child: Text(
             "FlutteRflY",
             style: TextStyle(color: Colors.black, fontSize: 27),
