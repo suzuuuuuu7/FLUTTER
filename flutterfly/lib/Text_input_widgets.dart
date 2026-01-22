@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: .fromSeed(seedColor: Colors.yellow),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -80,15 +80,28 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
+                // enabled: false,
                 decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(),
-                  border: OutlineInputBorder(
+                  focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(
-                      color: const Color.fromARGB(31, 0, 0, 0),
-                      width: 20,
-                    ),
+                    borderSide: BorderSide(color: Colors.deepOrange, width: 2),
                   ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.indigo, width: 2),
+                  ),
+                  suffixText: ("user_name exit."),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      print("Button clicked");
+                    },
+                    icon: Icon(Icons.remove_red_eye, color: Colors.red),
+                  ),
+                  prefixIcon: Icon(Icons.email, color: Colors.black54),
                 ),
               ),
               SizedBox(height: 50),
@@ -96,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide: BorderSide(color: Colors.black12),
+                    borderSide: BorderSide(color: Colors.green),
                   ),
                 ),
               ),
