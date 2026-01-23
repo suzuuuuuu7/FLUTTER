@@ -87,8 +87,21 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           width: 200,
           height: 200,
-          color: Colors.blueGrey,
-          child: Column(children: [Text("Current Time: $time")]),
+
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Current Time: ${time.year}"),
+              SizedBox(height: 20),
+
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {});
+                },
+                child: Text("Update time"),
+              ),
+            ],
+          ),
         ),
       ),
     ); // This trailing comma makes auto-formatting nicer for build methods.
