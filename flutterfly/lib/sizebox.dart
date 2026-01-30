@@ -72,16 +72,41 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text("flutter"),
       ),
-      body: ConstrainedBox(
-        constraints: BoxConstraints(
-          minHeight: 50,
-          minWidth: 100,
-          maxHeight: 100,
-          maxWidth: 200,
-        ),
-        child: SizedBox.expand(
-          child: ElevatedButton(onPressed: () {}, child: Text("Click me..")),
-        ),
+      // body: ConstrainedBox(
+      //   constraints: BoxConstraints(
+      //     minHeight: 50,
+      //     minWidth: 100,
+      //     maxHeight: 100,
+      //     maxWidth: 200,
+      //   ),
+      //   child: SizedBox.expand(
+      //     child: ElevatedButton(onPressed: () {}, child: Text("Click me..")),
+      //   ),
+      // ),
+      body: Column(
+        children: [
+          SizedBox.square(
+            dimension: 200,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                "Click me..",
+                style: TextStyle(color: Colors.deepOrange, fontSize: 30),
+              ),
+            ),
+          ),
+          SizedBox(height: 50),
+          SizedBox.square(
+            dimension: 200,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                "Click me..",
+                style: TextStyle(color: Colors.deepOrange, fontSize: 30),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
