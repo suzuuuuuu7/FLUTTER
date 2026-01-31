@@ -72,41 +72,46 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text("flutter"),
       ),
-      // body: ConstrainedBox(
-      //   constraints: BoxConstraints(
-      //     minHeight: 50,
-      //     minWidth: 100,
-      //     maxHeight: 100,
-      //     maxWidth: 200,
-      //   ),
-      //   child: SizedBox.expand(
-      //     child: ElevatedButton(onPressed: () {}, child: Text("Click me..")),
-      //   ),
-      // ),
-      body: Column(
-        children: [
-          SizedBox.square(
-            dimension: 200,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                "Click me..",
-                style: TextStyle(color: Colors.deepOrange, fontSize: 30),
+      // body: Column(
+      //   children: [
+      //     SizedBox(
+      //       height: 50,
+      //       width: 200,
+      //       child: Container(
+      //         color: Colors.amber,
+      //         child: Text("Iam here..", style: TextStyle(fontSize: 25)),
+      //       ),
+      //     ),
+      //     SizedBox(height: 20),
+      //     SizedBox(
+      //       width: 100,
+      //       height: 50,
+      //       child: ElevatedButton(
+      //         onPressed: () {
+      //           print("button clicked");
+      //         },
+      //         style: ElevatedButton.styleFrom(
+      //           backgroundColor: Colors.blueAccent,
+      //         ),
+      //         child: Text("login"),
+      //       ),
+      //     ),
+      //   ],
+      body: SizedBox.square(
+        dimension: 200,
+        child: Column(
+          children: [
+            Container(color: Colors.blueAccent, child: Text("sujal kc")),
+            SizedBox(height: 20),
+            Container(
+              child: Image.asset(
+                "assets/images/don.jpg",
+                width: 100,
+                height: 100,
               ),
             ),
-          ),
-          SizedBox(height: 50),
-          SizedBox.square(
-            dimension: 200,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                "Click me..",
-                style: TextStyle(color: Colors.deepOrange, fontSize: 30),
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

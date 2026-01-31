@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterfly/widgets/roundedBtn.dart';
+import 'package:flutterfly/widgets/Button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -74,33 +74,21 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Container(
-              width: 100,
-              child: RoundedButton(
-                btnName: "Login",
-                icon: Icon(Icons.abc_rounded),
-                callBack: () {
-                  print("logged in");
-                },
-              ),
-            ),
-            Container(
-              width: 100,
-
-              child: RoundedButton(
-                bgcolor: Colors.deepOrange,
-                btnName: "play",
-                icon: Icon(Icons.abc_rounded),
-                callBack: () {
-                  print("logged in");
-                },
-              ),
-            ),
-          ],
-        ),
+      body: Column(
+        children: [
+          button(
+            text: "save",
+            onPressed: () {
+              print("saved");
+            },
+          ),
+          button(
+            text: "register",
+            onPressed: () {
+              print("sucessful");
+            },
+          ),
+        ],
       ),
     );
   }
