@@ -30,30 +30,24 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var _height = 100.0;
+  Color bgColor = Colors.blue;
+
+  var _width = 200.0;
+  bool flag = true;
+
+  // This widget is the home page of your application. It is stateful, meaning
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -77,14 +71,31 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AnimatedContainer(
-              width: 200,
-              height: 100,
-              color: Colors.blue,
+              width: _width,
+              height: _height,
+              color: bgColor,
               duration: Duration(
                 seconds: 2,
               ), // animation is all about time duration
             ),
-            ElevatedButton(onPressed: () {}, child: Text("Animate")),
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    if (flag) {
+                      _width = 100.0;
+                      _height = 200.0;
+                      bgColor = Colors.orange;
+
+                      flag = false;
+                    } else {
+                      _width = 200.0;
+                      _height = 100.0;
+                      bgColor = Colors.brown;
+                      flag = true;
+                    }
+                  });
+                },
+                child: Text("Animate"))
           ],
         ),
       ),
