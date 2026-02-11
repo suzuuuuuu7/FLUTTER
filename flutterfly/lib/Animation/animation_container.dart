@@ -42,10 +42,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var _height = 100.0;
-  Color bgColor = Colors.blue;
-
   var _width = 200.0;
   bool flag = true;
+  Decoration mydeco = BoxDecoration(
+    color: Colors.amber,
+    borderRadius: BorderRadius.circular(20),
+  );
+  Curve mycurve = Curves.bounceInOut;
 
   // This widget is the home page of your application. It is stateful, meaning
   @override
@@ -72,11 +75,13 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             AnimatedContainer(
               width: _width,
+              curve: mycurve,
               height: _height,
-              color: bgColor,
+              decoration: mydeco,
               duration: Duration(
                 seconds: 2,
-              ), // animation is all about time duration
+              ),
+              // animation is all about time duration
             ),
             ElevatedButton(
                 onPressed: () {
@@ -84,13 +89,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     if (flag) {
                       _width = 100.0;
                       _height = 200.0;
-                      bgColor = Colors.orange;
-
+                      mydeco = BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(100),
+                      );
                       flag = false;
                     } else {
                       _width = 200.0;
                       _height = 100.0;
-                      bgColor = Colors.brown;
+                      mydeco = BoxDecoration(
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(100),
+                      );
+
                       flag = true;
                     }
                   });
