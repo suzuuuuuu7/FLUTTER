@@ -59,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   late Animation animation;
   late Animation animation1;
+  late Animation animation2;
   late AnimationController animationcontroller;
   void initState() {
     super.initState();
@@ -67,10 +68,14 @@ class _MyHomePageState extends State<MyHomePage>
     animation = Tween(begin: 50.0, end: 200.0).animate(animationcontroller);
     animation1 = ColorTween(begin: Colors.amber, end: Colors.blue)
         .animate(animationcontroller);
+    animation2 =
+        Tween(begin: BorderRadius.circular(10), end: BorderRadius.circular(70))
+            .animate(animationcontroller);
 
     animationcontroller.addListener(() {
       print(animation.value);
       print(animation1.value);
+      print(animation2);
       setState(() {});
     });
     animationcontroller.forward();
@@ -99,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage>
             height: animation.value,
             decoration: BoxDecoration(
               color: animation1.value,
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: animation2.value,
             )),
       ),
     );
