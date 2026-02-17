@@ -67,12 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
   // for multiple values we have to map it
   var arrdata = [
     {"Name": "raman", "mobno": "6886858585", "unread": "2"},
-    {"Name": "ran", "mobno": "6886858585", "unread": "2"},
+    {"Name": "ran", "mobno": "6886858585", "unread": "3"},
     {"Name": "an", "mobno": "6886858585", "unread": "2"},
     {"Name": "an", "mobno": "6886858585", "unread": "2"},
     {"Name": "raman", "mobno": "6886858585", "unread": "2"},
     {"Name": "raman", "mobno": "6886858585", "unread": "2"},
-    {"Name": "reman", "mobno": "6886858585", "unread": "2"},
+    {"Name": "reman", "mobno": "6886858585", "unread": "4"},
     {"Name": "raman", "mobno": "6886858585", "unread": "2"},
     {"Name": "raddn", "mobno": "6886858585", "unread": "2"},
     {"Name": "raman", "mobno": "6886858585", "unread": "2"},
