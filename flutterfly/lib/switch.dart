@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfly/Switching/screen1.dart';
+import 'package:flutterfly/Switching/screen2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Screen1(),
+      home: MyPage(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -47,23 +48,21 @@ class MyPage extends StatelessWidget {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-        appBar: AppBar(
-          // TRY THIS: Try changing the color here to a specific color (to
-          // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-          // change color while the other colors stay the same.
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
-          title: Text("flutter"),
-        ),
-        body: ElevatedButton(
-            onPressed: () {
-              Navigator.pop(
-                  context, MaterialPageRoute(builder: (context) => Screen1()));
-            },
-            child: Text(
-              "Go to the screen 1",
-              style: TextStyle(fontSize: 20, color: Colors.deepPurple),
-            )));
+      appBar: AppBar(
+        // TRY THIS: Try changing the color here to a specific color (to
+        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+        // change color while the other colors stay the same.
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+       // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text("flutter"),
+      ),
+      body: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => screen2()));
+          },
+          child: Text("Go to screen 2")),
+    );
   }
 }
