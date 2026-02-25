@@ -1,21 +1,20 @@
 import 'dart:io';
-
 void main() {
   int count = 0;
-  int maxAttempt = 5;
-  while (count < maxAttempt) {
-    print("Choose any one number that you have to suggest");
-    int guess = int.parse(stdin.readLineSync()!);
-    if (guess == 5) {
-      print("Congratulation! you won the game");
+  int max_count = 5;
+  stdout.write("choose any number from 1 t0 10\n");
+  while (count < max_count) {
+    int num = int.parse(stdin.readLineSync()!);
+    if (num == 6) {
+      stdout.write("you win");
+      stdout.write("Game finished");
       break;
+    } else if (count == max_count - 2) {
+      print("You have left only one attempt");
+    } else if (count == 4) {
+      stdout.write("game over");
     } else {
-      if (count < maxAttempt - 1) {
-        print("Try again");
-        if (count == 4) {
-          print("Game over");
-        }
-      }
+      stdout.write("try again\n");
     }
     count += 1;
   }
