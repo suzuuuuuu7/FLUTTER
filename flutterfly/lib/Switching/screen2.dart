@@ -9,15 +9,20 @@ class screen2 extends StatelessWidget {
         backgroundColor: Colors.blueGrey,
       ),
       body: Center(
-        child: SizedBox(
+        child: Container(
+          width: 100,
           height: 100,
-          width: 200,
-          child: CircleAvatar(
-            backgroundImage: AssetImage("assets/images/boy.jpg"),
-          ),
+          decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.blue,
+                width: 4,
+              ),
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                  image: AssetImage("assets/images/nice.webp"),
+                  fit: BoxFit.cover)),
         ),
       ),
     );
   }
 }
- 

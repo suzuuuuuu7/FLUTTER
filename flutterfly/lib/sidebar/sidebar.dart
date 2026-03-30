@@ -68,7 +68,7 @@ class MyHomePage extends StatelessWidget {
         title: Text("SIDE BAR"),
       ),
       drawer: Drawer(
-        width: 400,
+        width: 150,
         shadowColor: Colors.black,
         child: ListView(
           children: [
@@ -79,10 +79,10 @@ class MyHomePage extends StatelessWidget {
               child: Column(
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(40),
                     child: Image.asset(
                       "assets/images/waoo.webp",
-                      width: 100,
+                      width: 200,
                       height: 100,
                     ),
                   ),
@@ -92,13 +92,89 @@ class MyHomePage extends StatelessWidget {
             ),
             Column(
               children: [
-                ListTile(
-                  title: Text("setting"),
-                  leading: Icon(Icons.settings),
+                // ListTile(
+                //   title: Text("setting"),
+                //   leading: Icon(Icons.settings),
+                // ),
+                // ListTile(
+                //   title: Text("Home"),
+                //   leading: Icon(Icons.home),
+                // ),
+                Container(
+                  width: 150,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: Colors.black,
+                      )),
+                  child: Center(
+                    child: Text(
+                      "PHYSICAL",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight(1000)),
+                    ),
+                  ),
                 ),
-                ListTile(
-                  title: Text("HOme"),
-                  leading: Icon(Icons.home),
+                SizedBox(
+                  height: 30,
+                ),
+
+                Container(
+                  width: 150,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: Colors.black,
+                      )),
+                  child: Center(
+                    child: Text(
+                      "SOCIAL",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight(1000)),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+
+                Container(
+                  width: 150,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: Colors.black,
+                      )),
+                  child: Center(
+                    child: Text(
+                      "EDUCATIONAL",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight(1000)),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+
+                Container(
+                  width: 150,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: Colors.black,
+                      )),
+                  child: Center(
+                    child: Text(
+                      "MENTAL",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight(1000)),
+                    ),
+                  ),
                 ),
               ],
             )
