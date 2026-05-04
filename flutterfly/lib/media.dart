@@ -1,0 +1,135 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // TRY THIS: Try running your application with "flutter run". You'll see
+        // the application has a purple toolbar. Then, without quitting the app,
+        // try changing the seedColor in the colorScheme below to Colors.green
+        // and then invoke "hot reload" (save your changes or press the "hot
+        // reload" button in a Flutter-supported IDE, or press "r" if you used
+        // the command line to start the app).
+        //
+        // Notice that the counter didn't reset back to zero; the application
+        // state is not lost during the reload. To reset the state, use hot
+        // restart instead.
+        //
+        // This works for code too, not just values: Most code changes can be
+        // tested with just a hot reload.
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  // This widget is the home page of your application. It is stateful, meaning
+  // that it has a State object (defined below) that contains fields that affect
+  // how it looks.
+
+  // This class is the configuration for the state. It holds the values (in this
+  // case the title) provided by the parent (in this case the App widget) and
+  // used by the build method of the State. Fields in a Widget subclass are
+  // always marked "final".
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    var _mediaquery = MediaQuery.of(context);
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+    // return Scaffold(
+    //appBar: AppBar(
+    // TRY THIS: Try changing the color here to a specific color (to
+    // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+    // change color while the other colors stay the same.
+    // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+    // Here we take the value from the MyHomePage object that was created by
+    // the App.build method, and use it to set our appbar title.
+    //  title: Text("flutter"),
+    // ),
+    // body: Row(
+    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //   crossAxisAlignment: CrossAxisAlignment.start,
+    //   children: [
+    //     Container(
+    //       width: _mediaquery.size.width * 0.3,
+    //       height: _mediaquery.size.height * 0.5,
+    //       decoration: const BoxDecoration(color: Colors.green),
+    //     ),
+    //     Container(
+    //       width: _mediaquery.size.width * 0.7,
+    //       height: _mediaquery.size.height * 0.5,
+    //       decoration: const BoxDecoration(color: Colors.yellow),
+    //     )
+    //   ],
+    // ));
+    return Scaffold(
+      body: Builder(builder: (context) {
+        if (_mediaquery.orientation == Orientation.portrait) {
+          return potraitWidget(_mediaquery.size);
+        } else {
+          return landscapeWidget(_mediaquery.size);
+        }
+      }),
+    );
+  }
+
+  Widget potraitWidget(Size size) {
+    return Center(
+      child: Container(
+          width: size.width * 0.5,
+          height: size.height * 0.5,
+          decoration: BoxDecoration(
+            color: Colors.blue,
+          ),
+          child: Center(
+            child: Text(
+              "portrait",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+          )),
+    );
+  }
+
+  Widget landscapeWidget(Size size) {
+    return Center(
+      child: Container(
+          width: size.width * 0.8,
+          height: size.height * 0.8,
+          decoration: BoxDecoration(
+            color: Colors.yellow,
+          ),
+          child: Center(
+            child: Text(
+              "landscape",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+          )),
+    );
+  }
+}
